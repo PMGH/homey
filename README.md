@@ -4,6 +4,7 @@
 - [Brief](#brief)
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
+- [Logging in](#logging-in)
 - [Useful Links](#useful-links)
 
 ## Task
@@ -52,6 +53,15 @@ Run the tests:
 ```bash
 rails test:all
 ```
+
+## Logging in
+
+The application uses [Devise](https://github.com/heartcombo/devise) for authentication.
+
+A seed user has been added to the `db/seeds.rb` file with login credentials as follows:
+
+**Email:** `test@example.com`  
+**Password:** `Seed123`
 
 ## Useful Links
 
