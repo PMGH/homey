@@ -7,3 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# Clear the database
+User.destroy_all
+
+# Populate the database
+User.create!(first_name: "Seed", last_name: "User", email: "test@example.com", password: "Seed123")
