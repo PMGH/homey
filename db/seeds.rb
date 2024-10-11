@@ -9,7 +9,12 @@
 #   end
 
 # Clear the database
+Project.destroy_all
 User.destroy_all
 
 # Populate the database
-User.create!(first_name: "Seed", last_name: "User", email: "test@example.com", password: "Seed123")
+user = User.create!(first_name: "Seed", last_name: "User", email: "test@example.com", password: "Seed123")
+
+project = Project.create!(name: "Test Project")
+
+UserProject.create!(user: user, project: project)
