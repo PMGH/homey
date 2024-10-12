@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_10_11_191053) do
+ActiveRecord::Schema[7.1].define(version: 2024_10_12_211010) do
+  create_table "comments", force: :cascade do |t|
+    t.string "description"
+    t.integer "user_id"
+    t.integer "project_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_comments_on_project_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -41,6 +51,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_11_191053) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "projects"
+  add_foreign_key "comments", "users"
   add_foreign_key "user_projects", "projects"
   add_foreign_key "user_projects", "users"
 end
