@@ -2,9 +2,20 @@
 
 <%= render @project %>
 
-<div>
-  <%= link_to "Edit this project", edit_project_path(@project) %> |
-  <%= link_to "Back to projects", projects_path %>
+<div class="mt-5">
+  <h1 class="font-bold">Conversation History</h1>
+  <% @conversation_history.each do |conversation_item| %>
+    <% if conversation_item.is_a? ProjectStatus %>
+      <%= render "shared/project_status", project_status: conversation_item %>
+    <% end %>
+    <% if conversation_item.is_a? Comment %>
+      <%= render "shared/comment", comment: conversation_item %>
+    <% end %>
+  <% end %>
+</div>
 
-  <%= button_to "Destroy this project", @project, method: :delete %>
+<div>
+  <%= link_to "Back to projects", projects_path, class: "button-primary" %>
+
+  <%= button_to "Destroy this project", @project, method: :delete, class: "button-danger" %>
 </div>

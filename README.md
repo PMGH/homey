@@ -60,7 +60,7 @@ The application uses [Devise](https://github.com/heartcombo/devise) for authenti
 
 A seed user has been added to the `db/seeds.rb` file with login credentials as follows:
 
-**Email:** `test@example.com`  
+**Email:** `seed@example.com`  
 **Password:** `Seed123`
 
 ## Useful Links

@@ -2,12 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-
 @layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+  .button-primary {
+    @apply py-2 px-4 bg-blue-200 rounded-md;
+  }
+  .button-danger {
+    @apply py-2 px-4 bg-red-500 rounded-md text-white;
   }
 }
-
-*/

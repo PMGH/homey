@@ -8,6 +8,10 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1 or /projects/1.json
   def show
+    @comments = @project.comments
+    @project_statuses = @project.project_statuses
+    @conversation_history = @comments + @project_statuses
+    @conversation_history = @conversation_history.sort_by(&:created_at)
   end
 
   # GET /projects/new
