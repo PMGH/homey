@@ -51,7 +51,7 @@ rails db:create db:migrate db:seed
 Run the tests:
 
 ```bash
-rails test:all
+rails test
 ```
 
 ## Logging in
