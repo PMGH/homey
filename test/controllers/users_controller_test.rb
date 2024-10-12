@@ -4,12 +4,12 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   setup do
-    sign_in users(:one)
     @user = users(:one)
+    sign_in @user
   end
 
   teardown do
-    sign_out users(:one)
+    sign_out @user
   end
 
   test "should get index" do
@@ -24,7 +24,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create user" do
     assert_difference("User.count") do
-      post users_url, params: { user: { first_name: @user.first_name, last_name: @user.last_name } }
+      post users_url, params: { user: { first_name: "New", last_name: "User", email: "new_user@example.com", password: "encrypted_password" } }
     end
 
     assert_redirected_to user_url(User.last)

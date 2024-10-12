@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :user_projects
   resources :projects
-  devise_for :users
   resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -10,4 +9,8 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   root "users#index"
+
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
 end
