@@ -1,0 +1,6 @@
+<nav class="flex flex-row justify-between p-8 border-solid border-b-2 border-sky-500">
+  <%= link_to "Homey", authenticated_user_root_path, class: "font-bold underline" %>
+  <% if user_signed_in? %>
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete  %>
+  <% end %>
+</nav>
