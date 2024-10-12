@@ -47,6 +47,9 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+
+  # Pry-byebug https://github.com/deivid-rodriguez/pry-byebug
+  gem 'pry-byebug'
 end
 
 group :development do
@@ -58,9 +61,6 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-
-  # Pry-byebug https://github.com/deivid-rodriguez/pry-byebug
-  gem 'pry-byebug'
 end
 
 group :test do
