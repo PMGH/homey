@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_10_12_211010) do
+ActiveRecord::Schema[7.1].define(version: 2024_10_12_211852) do
   create_table "comments", force: :cascade do |t|
     t.string "description"
     t.integer "user_id"
@@ -19,6 +19,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_12_211010) do
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_comments_on_project_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "project_statuses", force: :cascade do |t|
+    t.integer "status"
+    t.integer "user_id"
+    t.integer "project_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_project_statuses_on_project_id"
+    t.index ["user_id"], name: "index_project_statuses_on_user_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -53,6 +63,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_12_211010) do
 
   add_foreign_key "comments", "projects"
   add_foreign_key "comments", "users"
+  add_foreign_key "project_statuses", "projects"
+  add_foreign_key "project_statuses", "users"
   add_foreign_key "user_projects", "projects"
   add_foreign_key "user_projects", "users"
 end
