@@ -7,6 +7,7 @@
 - [Deployed URL](#deployed-url)
 - [Logging in and navigating to the Conversation History](#logging-in-and-navigating-to-the-conversation-history)
 - [Database ERD](#database-erd)
+- [Example Project Conversation History](#example-project-conversation-history)
 
 ## Task
 
@@ -75,3 +76,7 @@ Once logged in use the 'Show this project' button to view the Seed Project named
 ## Database ERD
 
 ![image](./public/homey-tech-test-erd.png)
+
+## Example Project Conversation History
+
+![image](./public/homey-conversation-history.png)
