@@ -8,6 +8,7 @@
 - [Logging in and navigating to the Conversation History](#logging-in-and-navigating-to-the-conversation-history)
 - [Database ERD](#database-erd)
 - [Example Project Conversation History](#example-project-conversation-history)
+- [If this were a Production application](#if-this-were-a-production-application)
 
 ## Task
 
@@ -80,3 +81,13 @@ Once logged in use the 'Show this project' button to view the Seed Project named
 ## Example Project Conversation History
 
 ![image](./public/homey-conversation-history.png)
+
+## If this were a Production application
+
+If this were a Production application instead of a technical test I would:
+
+- spend more time on the UI design and the UX
+- enable adding and removing comments
+- enable editing comments
+- display the current project status at the top of the page
+- display the datetime of the project_status updates and comments in a more user friendly way using [`strftime`](https://apidock.com/ruby/DateTime/strftime)
