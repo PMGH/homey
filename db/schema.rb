@@ -11,10 +11,13 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_10_12_211852) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.string "description"
-    t.integer "user_id"
-    t.integer "project_id", null: false
+    t.bigint "user_id"
+    t.bigint "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_comments_on_project_id"
@@ -23,8 +26,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_12_211852) do
 
   create_table "project_statuses", force: :cascade do |t|
     t.integer "status"
-    t.integer "user_id"
-    t.integer "project_id", null: false
+    t.bigint "user_id"
+    t.bigint "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_project_statuses_on_project_id"
@@ -39,8 +42,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_12_211852) do
   end
 
   create_table "user_projects", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "project_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_user_projects_on_project_id"
