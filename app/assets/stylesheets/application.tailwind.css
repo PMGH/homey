@@ -3,10 +3,14 @@
 @tailwind utilities;
 
 @layer components {
-  .button-primary {
-    @apply py-2 px-4 bg-blue-200 rounded-md;
+  .button-primary,
+  .actions input[type="submit"] {
+    @apply py-2 px-4 bg-blue-200 rounded-md w-fit no-underline text-slate-900 my-3;
   }
   .button-danger {
-    @apply py-2 px-4 bg-red-500 rounded-md text-white;
+    @apply py-2 px-4 bg-red-500 rounded-md text-white w-fit my-3;
+  }
+  a {
+    @apply text-blue-500 underline;
   }
 }
