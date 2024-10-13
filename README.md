@@ -4,8 +4,9 @@
 - [Brief](#brief)
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
-- [Logging in](#logging-in)
-- [Useful Links](#useful-links)
+- [Deployed URL](#deployed-url)
+- [Logging in and navigating to the Conversation History](#logging-in-and-navigating-to-the-conversation-history)
+- [Database ERD](#database-erd)
 
 ## Task
 
@@ -54,7 +55,13 @@ Run the tests:
 rails test
 ```
 
-## Logging in
+## Deployed URL
+
+| Link       | URL                                                                  |
+| ---------- | -------------------------------------------------------------------- |
+| Production | [https://homey-v3fw.onrender.com/](https://homey-v3fw.onrender.com/) |
+
+## Logging in and navigating to the Conversation History
 
 The application uses [Devise](https://github.com/heartcombo/devise) for authentication.
 
@@ -63,8 +70,8 @@ A seed user has been added to the `db/seeds.rb` file with login credentials as f
 **Email:** `seed@example.com`  
 **Password:** `Seed123`
 
-## Useful Links
+Once logged in use the 'Show this project' button to view the Seed Project named 'Test Project'.
 
-| Link       | URL                                                                  |
-| ---------- | -------------------------------------------------------------------- |
-| Production | [https://homey-v3fw.onrender.com/](https://homey-v3fw.onrender.com/) |
+## Database ERD
+
+![image](./public/homey-tech-test-erd.png)
